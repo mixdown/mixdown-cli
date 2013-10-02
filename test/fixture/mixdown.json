@@ -1,0 +1,27 @@
+{
+  "app": {
+    "plugins": {
+      "number": {
+        "module": "/test/fixture/number.js",
+        "options": {
+          "value": 0
+        }
+      }
+    }
+  },
+  "services": {
+    "options": {
+      "paths": ["/test/fixture/mixdown-services"]
+    }
+  },
+  "main": {
+    "module": "index.js",
+    "options": {
+      "main": {
+        "module": "./test/fixture/cli-worker.js",
+        "options": { }
+      }
+    }
+  }
+
+}

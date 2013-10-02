@@ -50,7 +50,7 @@ Main.prototype.start = function(callback) {
 
   var logServerInfo = function(message) {
     var hmap = _.map(mixdown.apps, function(app) { return _.pick(app, 'vhosts', 'id'); });
-    logger.info(message || 'Service Information. ', that.socket.address(), hmap);
+    logger.info(message || 'Service Information. ', Object.keys(mixdown.apps));
   };
 
   // this reload listener just logs the reload info.

@@ -25,9 +25,12 @@
     "url": "https://github.com/mixdown/mixdown-cli/issues"
   },
   "dependencies": {
-    "lodash": "~2.2.0"
+    "lodash": "~2.2.0",
+    "optimist": "~0.6.0",
+    "async": "~0.2.9"
   },
   "devDependencies": {
-    "mocha": "~1.13.0"
+    "mocha": "~1.13.0",
+    "mixdown": "~1.0.1"
   }
 }

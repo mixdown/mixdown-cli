@@ -1,0 +1,9 @@
+{
+  "plugins": {
+    "number": {
+      "options": {
+        "value": 100
+      }
+    }
+  }
+}
