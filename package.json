@@ -1,0 +1,33 @@
+{
+  "name": "mixdown-cli",
+  "version": "0.0.0",
+  "description": "CLI main for mixdown. Use this to create CLI tools or services with mixdown.",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec -u tdd test/tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mixdown/mixdown-cli.git"
+  },
+  "keywords": [
+    "mixdown",
+    "cli",
+    "plugins"
+  ],
+  "author": "tommy@vast.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mixdown/mixdown-cli/issues"
+  },
+  "dependencies": {
+    "lodash": "~2.2.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0"
+  }
+}
