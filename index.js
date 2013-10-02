@@ -44,6 +44,10 @@ var Main = function(mixdown, options) {
   this.options = options;
 };
 
+Main.prototype.stop = function(callback) {
+  this.service.stop(callback);
+};
+
 Main.prototype.start = function(callback) {
   var that = this;
   var mixdown = this.mixdown;
@@ -67,7 +71,7 @@ Main.prototype.start = function(callback) {
       }
       else {
         logServerInfo('Service started successfully.');
-        done(err, that);
+        done(err, that.service.delegate);
       }
     });
   };

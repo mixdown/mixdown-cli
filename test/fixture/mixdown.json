@@ -17,8 +17,8 @@
   "main": {
     "module": "index.js",
     "options": {
-      "main": {
-        "module": "./test/fixture/cli-worker.js",
+      "delegate": {
+        "module": "./test/fixture/cli-delegate.js",
         "options": { }
       }
     }

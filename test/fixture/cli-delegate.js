@@ -1,15 +1,18 @@
+var util = require('util');
+var events = require('events');
 
 // This export must return an object (or class) with start/stop functions.  
 // When mixdown calls start, mixdown.apps is already initialized.  This is true for start and reload scenarios.
-module.exports = function(mixdown, options) {
+var Delegate = function(mixdown, options) {
   this.mixdown = mixdown;
   this.options = options;
 
   var keyIndex = 0;
   var keys = [];
   var isRunning = false;
+  var that = this;
 
-  var printNumber = function() {
+  var emitNumber = function() {
     if (!isRunning) {
       return;
     }
@@ -22,8 +25,9 @@ module.exports = function(mixdown, options) {
       return;
     }
 
-    console.log(app.plugins.number.get());
-    setImmediate(printNumber); // re-queue itself
+    var n = app.plugins.number.get();
+    that.emit('number', n);
+    setImmediate(emitNumber); // re-queue itself
   };
 
   // TODO: add support to override options from argv
@@ -32,7 +36,7 @@ module.exports = function(mixdown, options) {
   this.start = function(done) {
     keys = Object.keys(mixdown.apps);
 
-    setImmediate(printNumber);
+    setImmediate(emitNumber);
     isRunning = true;
 
     done();
@@ -45,3 +49,7 @@ module.exports = function(mixdown, options) {
     done();
   };
 };
+
+util.inherits(Delegate, events.EventEmitter);
+
+module.exports = Delegate;
