@@ -1,6 +1,6 @@
 {
   "name": "mixdown-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI main for mixdown. Use this to create CLI tools or services with mixdown.",
   "main": "index.js",
   "directories": {
