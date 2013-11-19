@@ -31,6 +31,6 @@
   },
   "devDependencies": {
     "mocha": "~1.13.0",
-    "mixdown": "~1.0.1"
+    "mixdown": "~1.1.1"
   }
 }
