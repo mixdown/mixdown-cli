@@ -140,10 +140,12 @@ Main.prototype.start = function(callback) {
           var child = cluster.fork();
           children[child.process.pid] = child;
         }
-         
       });
 
-    } else {
+      //no delegate in the case of being a cluster master
+      callback(null,null);
+    }
+    else {
       logger.info("Worker ID", process.env.NODE_WORKER_ID);
       createService(callback);
     }
